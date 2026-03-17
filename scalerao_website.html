@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScaleRao – Amazon Growth Partner</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0a1628;
+    --navy2: #122040;
+    --gold: #f0a500;
+    --gold2: #ffc740;
+    --white: #ffffff;
+    --light: #f5f7fa;
+    --muted: #7a8ba0;
+    --text: #1e2d3d;
+    --border: rgba(240,165,0,0.18);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,22,40,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(240,165,0,0.12); }
+  .logo { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--white); letter-spacing: -0.5px; }
+  .logo span { color: var(--gold); }
+  nav ul { display: flex; gap: 2rem; list-style: none; }
+  nav ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+  nav ul a:hover { color: var(--gold); }
+  .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 0.45rem 1.1rem; border-radius: 6px; font-weight: 600 !important; }
+
+  /* HERO */
+  .hero { min-height: 100vh; background: var(--navy); display: flex; align-items: center; padding: 7rem 5% 4rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(240,165,0,0.08) 0%, transparent 70%); border-radius: 50%; }
+  .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(240,165,0,0.12); border: 1px solid rgba(240,165,0,0.3); color: var(--gold); font-size: 0.78rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 20px; margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: 1.2rem; }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero p { color: rgba(255,255,255,0.65); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem; max-width: 480px; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--gold); color: var(--navy); padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block; }
+  .btn-primary:hover { background: var(--gold2); transform: translateY(-1px); }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.25); color: var(--white); padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 500; font-size: 0.95rem; text-decoration: none; transition: border-color 0.2s; display: inline-block; }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(240,165,0,0.15); border-radius: 16px; padding: 1.8rem; }
+  .stat { text-align: center; }
+  .stat-num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--gold); }
+  .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+  /* SECTION BASE */
+  section { padding: 5rem 5%; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 1rem; }
+  .section-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 560px; }
+
+  /* SERVICES */
+  .services { background: var(--light); }
+  .services-header { text-align: center; margin-bottom: 3.5rem; }
+  .services-header .section-sub { margin: 0 auto; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .service-card { background: var(--white); border-radius: 16px; padding: 2rem; border: 1px solid rgba(0,0,0,0.07); transition: box-shadow 0.2s, transform 0.2s; position: relative; overflow: hidden; }
+  .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+  .service-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); transform: translateY(-4px); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon { width: 48px; height: 48px; background: rgba(240,165,0,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; }
+  .service-icon svg { width: 24px; height: 24px; }
+  .service-card h3 { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem; }
+  .service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.65; margin-bottom: 1.2rem; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 0.72rem; font-weight: 500; background: rgba(240,165,0,0.1); color: #8a6000; padding: 3px 10px; border-radius: 20px; }
+
+  /* WHY US */
+  .why { background: var(--white); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .why-list { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+  .why-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .why-dot { width: 36px; height: 36px; min-width: 36px; background: rgba(240,165,0,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+  .why-dot svg { width: 18px; height: 18px; }
+  .why-item h4 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
+  .why-item p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+  .why-visual { background: var(--navy); border-radius: 20px; padding: 2.5rem; }
+  .metric-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .metric-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(240,165,0,0.15); border-radius: 12px; padding: 1.2rem; text-align: center; }
+  .metric-box .num { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--gold); }
+  .metric-box .lbl { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
+  .metric-full { background: rgba(240,165,0,0.1); border: 1px solid rgba(240,165,0,0.25); border-radius: 12px; padding: 1.2rem; text-align: center; }
+  .metric-full .num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--gold); }
+  .metric-full .lbl { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--light); }
+  .testimonials-header { text-align: center; margin-bottom: 3rem; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .tcard { background: var(--white); border-radius: 16px; padding: 1.8rem; border: 1px solid rgba(0,0,0,0.07); }
+  .tcard-quote { font-size: 0.9rem; color: var(--text); line-height: 1.7; font-style: italic; margin-bottom: 1.2rem; }
+  .tcard-author { display: flex; align-items: center; gap: 10px; }
+  .tcard-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--gold); }
+  .tcard-name { font-weight: 600; font-size: 0.875rem; color: var(--navy); }
+  .tcard-role { font-size: 0.75rem; color: var(--muted); }
+  .stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.75rem; }
+
+  /* CONTACT */
+  .contact { background: var(--navy); text-align: center; }
+  .contact .section-title { color: var(--white); }
+  .contact .section-sub { color: rgba(255,255,255,0.55); margin: 0 auto 2.5rem; }
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .contact-pill { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 0.7rem 1.4rem; color: rgba(255,255,255,0.8); font-size: 0.875rem; text-decoration: none; transition: background 0.2s; }
+  .contact-pill:hover { background: rgba(240,165,0,0.15); border-color: var(--gold); color: var(--gold); }
+
+  /* FOOTER */
+  footer { background: #060f1e; padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  footer .logo { font-size: 1.1rem; }
+  footer p { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .why-grid { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Scale<span>Rao</span></div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#testimonials">Results</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" fill="#f0a500"/></svg>
+        Amazon Certified Solution Provider
+      </div>
+      <h1>Scale Your Amazon Business with <em>Expert Strategy</em></h1>
+      <p>From advertising to catalog optimization — ScaleRao delivers end-to-end Amazon growth solutions for serious sellers.</p>
+      <div class="hero-btns">
+        <a href="#services" class="btn-primary">Explore Services</a>
+        <a href="#contact" class="btn-outline">Book a Free Audit</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">3x</div>
+        <div class="stat-label">Avg. Revenue Growth</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">40%</div>
+        <div class="stat-label">ACoS Reduction</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Sellers Served</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="services-header">
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">Comprehensive Amazon Solutions</h2>
+      <p class="section-sub">Three specialized service tracks designed to grow your Amazon business at every stage.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f0a500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+          </svg>
+        </div>
+        <h3>Advertising Optimization</h3>
+        <p>Data-driven PPC management to maximize your ROAS and minimize wasted ad spend. From Sponsored Products to DSP campaigns — we handle it all.</p>
+        <div class="service-tags">
+          <span class="tag">PPC Management</span>
+          <span class="tag">Keyword Research</span>
+          <span class="tag">Bid Optimization</span>
+          <span class="tag">ACoS Reduction</span>
+          <span class="tag">Sponsored Brands</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f0a500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <h3>Account Management</h3>
+        <p>Full-service Seller Central management — from performance monitoring and health maintenance to compliance, policy adherence, and growth strategy.</p>
+        <div class="service-tags">
+          <span class="tag">Seller Central</span>
+          <span class="tag">Account Health</span>
+          <span class="tag">Compliance</span>
+          <span class="tag">Performance Reports</span>
+          <span class="tag">Growth Strategy</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f0a500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+          </svg>
+        </div>
+        <h3>Cataloging</h3>
+        <p>Conversion-optimized product listings with SEO-rich content, A+ pages, and accurate categorization that drive discoverability and sales.</p>
+        <div class="service-tags">
+          <span class="tag">Listing Optimization</span>
+          <span class="tag">A+ Content</span>
+          <span class="tag">SEO Copywriting</span>
+          <span class="tag">Bulk Upload</span>
+          <span class="tag">Brand Registry</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div>
+        <div class="section-tag">Why ScaleRao</div>
+        <h2 class="section-title">We Treat Your Business Like Our Own</h2>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-dot">
+              <svg viewBox="0 0 18 18" fill="none" stroke="#f0a500" stroke-width="2"><path d="M3 9l4 4 8-8"/></svg>
+            </div>
+            <div>
+              <h4>Amazon-Specialized Team</h4>
+              <p>Our team works exclusively on Amazon — no distractions, deep platform expertise.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-dot">
+              <svg viewBox="0 0 18 18" fill="none" stroke="#f0a500" stroke-width="2"><path d="M3 9l4 4 8-8"/></svg>
+            </div>
+            <div>
+              <h4>Data-Driven Decisions</h4>
+              <p>Every action backed by analytics — no guesswork, no wasted budget.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-dot">
+              <svg viewBox="0 0 18 18" fill="none" stroke="#f0a500" stroke-width="2"><path d="M3 9l4 4 8-8"/></svg>
+            </div>
+            <div>
+              <h4>Full Transparency</h4>
+              <p>Monthly performance reports with clear KPIs — you always know exactly where your money goes.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-dot">
+              <svg viewBox="0 0 18 18" fill="none" stroke="#f0a500" stroke-width="2"><path d="M3 9l4 4 8-8"/></svg>
+            </div>
+            <div>
+              <h4>Dedicated Account Manager</h4>
+              <p>One point of contact, always available — not a support ticket system.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual">
+        <div class="metric-row">
+          <div class="metric-box"><div class="num">98%</div><div class="lbl">Client Retention</div></div>
+          <div class="metric-box"><div class="num">3.2x</div><div class="lbl">Avg. ROAS</div></div>
+        </div>
+        <div class="metric-row">
+          <div class="metric-box"><div class="num">48hr</div><div class="lbl">Onboarding Time</div></div>
+          <div class="metric-box"><div class="num">100%</div><div class="lbl">Policy Compliant</div></div>
+        </div>
+        <div class="metric-full"><div class="num">$2M+</div><div class="lbl">Ad Spend Managed Successfully</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="section-inner">
+    <div class="testimonials-header">
+      <div class="section-tag">Client Results</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <p class="tcard-quote">"ScaleRao reduced our ACoS from 38% to 19% in just 60 days. The team's knowledge of Amazon advertising is unmatched."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">RK</div>
+          <div>
+            <div class="tcard-name">Rahul Kapoor</div>
+            <div class="tcard-role">Electronics Seller, Amazon India</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <p class="tcard-quote">"Our product listings were a mess. ScaleRao's cataloging team transformed them — our conversion rate jumped 65% in the first month."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">SP</div>
+          <div>
+            <div class="tcard-name">Sunita Patel</div>
+            <div class="tcard-role">Home & Kitchen Brand Owner</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <p class="tcard-quote">"Having a dedicated account manager who actually understands Seller Central made all the difference. Highly recommend ScaleRao."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">AM</div>
+          <div>
+            <div class="tcard-name">Arjun Mehta</div>
+            <div class="tcard-role">Apparel Seller, 3 Marketplaces</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="section-tag" style="color: var(--gold);">Get In Touch</div>
+    <h2 class="section-title">Ready to Scale on Amazon?</h2>
+    <p class="section-sub">Book a free audit and discover how ScaleRao can grow your Amazon revenue.</p>
+    <div class="contact-links">
+      <a href="mailto:hello@scalerao.com" class="contact-pill">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        hello@scalerao.com
+      </a>
+      <a href="https://wa.me/91XXXXXXXXXX" class="contact-pill">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        WhatsApp Us
+      </a>
+      <a href="https://linkedin.com/company/scalerao" class="contact-pill">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 10v7m0-5a3 3 0 0 1 6 0v5"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Scale<span>Rao</span></div>
+  <p>© 2025 ScaleRao. All rights reserved. Amazon Solution Provider.</p>
+</footer>
+
+</body>
+</html>
