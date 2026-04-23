@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrionAI — ScaleRao's Proprietary Intelligence Engine</title>
+  <meta name="description" content="OrionAI — custom-built AI engine powering every ScaleRao account. Bid intelligence, keyword harvesting, TACoS management, self-healing agents." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" crossorigin src="./assets/orionai-CsZahmlu.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/common-DULFH2Pn.js">
+  <link rel="modulepreload" crossorigin href="./assets/scenes-D208DSkl.js">
+  <link rel="stylesheet" crossorigin href="./assets/common-BIpnG5k-.css">
+</head>
+<body data-page="orionai">
+  <nav class="nav" data-nav></nav>
+
+  <section class="hero">
+    <div class="hero-canvas" id="heroCanvas"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content" style="position: relative;">
+      <div aria-hidden="true" style="position: absolute; inset: -10% -15%; z-index: -1; background: radial-gradient(ellipse at 50% 50%, rgba(10,12,15,0.78) 0%, rgba(10,12,15,0.55) 35%, rgba(10,12,15,0.2) 60%, transparent 80%); pointer-events: none; filter: blur(8px);"></div>
+      <div class="eyebrow" data-hero-item>Proprietary AI Technology</div>
+      <h1 data-hero-item>
+        OrionAI.
+        <span class="italic">Custom-Built Intelligence Engine.</span>
+      </h1>
+      <p class="hero-sub" data-hero-item>
+        While agencies use off-the-shelf tools, ScaleRao built <b style="color: var(--amber-bright);">OrionAI</b> from scratch — a decision-making system that runs on every client account, evolves per seller, and does the work of a senior PPC analyst on shift 24/7.
+      </p>
+      <div class="hero-ctas" data-hero-item>
+        <a href="audit.html" class="btn btn-primary">See OrionAI on Your Account</a>
+        <a href="#features" class="btn btn-ghost">How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE TERMINAL -->
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">Live Cycle</div>
+        <h2 class="section-title">OrionAI, <span class="italic">Right Now.</span></h2>
+        <p class="section-sub">A live snapshot of what OrionAI is doing in production — every 4 hours, across every account.</p>
+      </div>
+
+      <div class="terminal reveal">
+        <div class="terminal-head">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="title">orion@scalerao — ~/prod</span>
+        </div>
+        <div class="terminal-body" id="terminalBody"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 FEATURE CARDS -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">Capabilities</div>
+        <h2 class="section-title">Six Engines. <span class="italic">One System.</span></h2>
+        <p class="section-sub">Each module below is a production component running on real client accounts. Not slide-deck-ware.</p>
+      </div>
+
+      <div class="grid-3 stagger">
+
+        <div class="card">
+          <span class="card-num">01 — Engine</span>
+          <span class="card-badge amber">Bid Intelligence</span>
+          <h3>Bid Intelligence</h3>
+          <p>Multi-window ROAS blended across 7/14/30-day lookbacks, TACoS-driven bid ladders, placement-level modifiers for Top-of-Search. Bids update every 4 hours, not monthly.</p>
+          <div class="card-tags">
+            <span class="card-tag">Multi-window ROAS</span>
+            <span class="card-tag">TACoS Ladder</span>
+            <span class="card-tag">Placement Mods</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">02 — Engine</span>
+          <span class="card-badge amber">Keywords</span>
+          <h3>Keyword Harvesting</h3>
+          <p>Auto-to-Exact pipeline promoting profitable search terms into dedicated campaigns; negative-keyword management mining wasted spend twice a day across every campaign.</p>
+          <div class="card-tags">
+            <span class="card-tag">Auto → Exact</span>
+            <span class="card-tag">Negatives</span>
+            <span class="card-tag">Search Terms</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">03 — Engine</span>
+          <span class="card-badge amber">TACoS</span>
+          <h3>TACoS Management</h3>
+          <p>Total ad-cost-of-sales tracked weekly against target; OrionAI trades short-term ACoS for long-term organic rank when the math supports it. Organic-to-paid ratio monitored per SKU.</p>
+          <div class="card-tags">
+            <span class="card-tag">Weekly Track</span>
+            <span class="card-tag">Organic Lift</span>
+            <span class="card-tag">SKU-level</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">04 — Engine</span>
+          <span class="card-badge amber">Reliability</span>
+          <h3>Self-Healing Agent</h3>
+          <p>4-layer watchdog system: process heartbeat, API-quota guard, auto-restart on failure, email alerts on persistent faults. If an agent dies at 3am, it restarts itself.</p>
+          <div class="card-tags">
+            <span class="card-tag">Watchdog</span>
+            <span class="card-tag">Auto-Restart</span>
+            <span class="card-tag">Email Alerts</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">05 — Engine</span>
+          <span class="card-badge amber">Finance</span>
+          <h3>Automated P&amp;L</h3>
+          <p>Monthly P&amp;L auto-generated on the 1st — ASIN-level revenue, FBA fees, ad spend, referral fees, and true margin. Delivered as PDF + live dashboard link.</p>
+          <div class="card-tags">
+            <span class="card-tag">ASIN-level</span>
+            <span class="card-tag">True Margin</span>
+            <span class="card-tag">PDF + Dashboard</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">06 — Engine</span>
+          <span class="card-badge amber">AI Layer</span>
+          <h3>AI Decision Engine</h3>
+          <p>Claude-powered strategy layer sitting above the rules engine — reads account state, proposes tactic changes, writes them to a vector memory so OrionAI gets smarter per-seller over time.</p>
+          <div class="card-tags">
+            <span class="card-tag">Claude AI</span>
+            <span class="card-tag">Vector Memory</span>
+            <span class="card-tag">Self-Evolution</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">Production Metrics</div>
+        <h2 class="section-title">OrionAI <span class="italic">By The Numbers.</span></h2>
+      </div>
+
+      <div class="grid-3 reveal" style="gap: 0; border: 1px solid var(--border); border-radius: 18px; background: var(--bg-2); overflow: hidden;">
+        <div style="padding: 40px 32px; text-align: center; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+          <div class="proof-num" data-count="1000" data-suffix="+">0+</div>
+          <div class="proof-label">Campaigns Managed</div>
+        </div>
+        <div style="padding: 40px 32px; text-align: center; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+          <div class="proof-num" style="font-size: 48px;">2×/day</div>
+          <div class="proof-label">Optimization Cycles</div>
+        </div>
+        <div style="padding: 40px 32px; text-align: center; border-bottom: 1px solid var(--border);">
+          <div class="proof-num" data-count="10000" data-suffix="+">0+</div>
+          <div class="proof-label">Keywords Tracked</div>
+        </div>
+        <div style="padding: 40px 32px; text-align: center; border-right: 1px solid var(--border);">
+          <div class="proof-num" style="font-size: 48px;">24 / 7</div>
+          <div class="proof-label">Uptime</div>
+        </div>
+        <div style="padding: 40px 32px; text-align: center; border-right: 1px solid var(--border);">
+          <div class="proof-num" data-count="2" data-prefix="₹" data-suffix="Cr+">₹0Cr+</div>
+          <div class="proof-label">Ad Spend Orchestrated</div>
+        </div>
+        <div style="padding: 40px 32px; text-align: center;">
+          <div class="proof-num" data-count="3.2" data-suffix="×" data-decimals="1">0×</div>
+          <div class="proof-label">Average ROAS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-strip reveal">
+        <div>
+          <h2>See OrionAI Run on Your Account.</h2>
+          <p>Book a free audit and we'll demo OrionAI live against your real account data — no fluff.</p>
+        </div>
+        <a href="audit.html" class="btn btn-primary">Book Free Audit →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" data-footer></footer>
+
+</body>
+</html>
